@@ -1,11 +1,13 @@
 <template>
-  <div id="nav">
+  <div id="nav" class="container bg-white mx-auto h-screen my-auto py-5 rounded-sm">
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/about" v-show="!game.active">About</router-link>
+    <router-view/>
   </div>
-  <router-view/>
 </template>
-
+<script setup>
+import game from '@/hooks/game'
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -14,11 +16,6 @@
   text-align: center;
   color: #2c3e50;
 }
-
-#nav {
-  padding: 30px;
-}
-
 #nav a {
   font-weight: bold;
   color: #2c3e50;
