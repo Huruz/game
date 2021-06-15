@@ -4,8 +4,6 @@ const execa = require("execa");
   (async () => {
     try {
       await execa("git", ["checkout", "--orphan", "gh-pages"]);
-      console.log("Installing...");
-      await execa("npm", ["install"]);
       console.log("Building...");
       await execa("npm", ["run", "build"]);
       // Understand if it's dist or build folder
@@ -14,10 +12,10 @@ const execa = require("execa");
       await execa("git", ["--work-tree", folderName, "commit", "-m", "gh-pages"]);
       console.log("Pushing to gh-pages...");
       await execa("git", ["push", "origin", "HEAD:gh-pages", "--force"]);
-      await execa("rmdir", ["/s", folderName]);
-      await execa("S");
       await execa("git", ["checkout", "-f", "master"]);
       await execa("git", ["branch", "-D", "gh-pages"]);
+      await execa("rmdir", ["/s", folderName]);
+      await execa("S");
       console.log("Successfully deployed");
     } catch (e) {
       console.log(e.message);
