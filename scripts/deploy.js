@@ -1,5 +1,6 @@
 const execa = require("execa");
   const fs = require("fs");
+  const fs2 = require('fs').promises
 
   (async () => {
     try {
@@ -14,9 +15,15 @@ const execa = require("execa");
       await execa("git", ["push", "origin", "HEAD:gh-pages", "--force"]);
       await execa("git", ["checkout", "-f", "master"]);
       await execa("git", ["branch", "-D", "gh-pages"]);
-      await execa("rmdir /s", [folderName]);
-      await execa("S");
       console.log("Successfully deployed");
+
+        fs2.rmdir('./dist', { recursive: true })
+        .then(() => {
+        console.log('"dist" folder removed')
+        })
+        .catch(err => {
+        console.error('Something wrong happened removing "dist" folder', err)
+        })
     } catch (e) {
       console.log(e.message);
       process.exit(1);
