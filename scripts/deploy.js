@@ -4,6 +4,8 @@ const execa = require("execa");
   (async () => {
     try {
       await execa("git", ["checkout", "--orphan", "gh-pages"]);
+      console.log("Installing...");
+      await execa("npm", ["install"]);
       console.log("Building...");
       await execa("npm", ["run", "build"]);
       // Understand if it's dist or build folder
