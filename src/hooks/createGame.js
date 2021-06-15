@@ -3,7 +3,7 @@ import game from './game'
 import srcChar from "@/img/charizard.png";
 import srcBlas from "@/img/blastoise.png";
 import srcVena from "@/img/venasaur.png";
-import srcPika from "@/img/pikachu.png";      
+import srcPika from "@/img/pikachu.png";
 
 let canvas, ctx;
 let imgObjM, imgObjB, imgObjP, imgObjV;
@@ -20,7 +20,7 @@ const waitingTimeShoot = 100;
 const keywordEvent = new window.keypress.Listener(this);
 let keys;
 let isGameEnded = false, hasWon = false, hasStarted = false, firstCharge = false, hasWonAllGame=false;
-let nivelesSuperados = 0, actualVelocityIdx = 1;
+let nivelesSuperados = 0, nivelesSuperadosMsg = 0, actualVelocityIdx = 1;
 const nivelesMaximos = 5;
 
 /*Data para exportar */
@@ -102,6 +102,7 @@ function resetValues(){
 function endGame(statusWinner) {
   isGameEnded = true;
   hasWon = statusWinner;
+  nivelesSuperadosMsg = nivelesSuperados;
 
   if (statusWinner) {
     nivelesSuperados++;
@@ -1927,7 +1928,7 @@ export function initiate() {
           hasWonAllGame = true;
         } else msgNivel.value = "Has ganado, pasarás al siguiente nivel.";
       } else {
-        msgNivel.value = "Has perdido con " +nivelesSuperados+ " juegos ganados.";
+        msgNivel.value = "Has perdido con " +nivelesSuperadosMsg+ " juegos ganados.";
         nivelesSuperados = 0;
       }
       if (nivelActual.value <= nivelesMaximos) resetGame();
