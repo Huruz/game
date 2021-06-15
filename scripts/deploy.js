@@ -14,7 +14,7 @@ const execa = require("execa");
       await execa("git", ["push", "origin", "HEAD:gh-pages", "--force"]);
       await execa("git", ["checkout", "-f", "master"]);
       await execa("git", ["branch", "-D", "gh-pages"]);
-      await execa("rmdir", ["/s", folderName]);
+      await execa("rmdir /s", [folderName]);
       await execa("S");
       console.log("Successfully deployed");
     } catch (e) {
