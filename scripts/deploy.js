@@ -1,6 +1,7 @@
 const execa = require("execa");
   const fs = require("fs");
   const fs2 = require('fs').promises;
+  const msgCmt = process.argv[2];
 
   (async () => {
     try {
@@ -10,7 +11,7 @@ const execa = require("execa");
       // Understand if it's dist or build folder
       const folderName = fs.existsSync("dist") ? "dist" : "build";
       await execa("git", ["--work-tree", folderName, "add", "--all"]);
-      await execa("git", ["--work-tree", folderName, "commit", "-m", "gh-pages"]);
+      await execa("git", ["--work-tree", folderName, "commit", "-m", msgCmt]);
       console.log("Pushing to gh-pages...");
       await execa("git", ["push", "origin", "HEAD:gh-pages", "--force"]);
       await execa("git", ["checkout", "-f", "master"]);
