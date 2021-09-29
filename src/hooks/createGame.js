@@ -4,6 +4,7 @@ import srcChar from "@/img/charizard.png";
 import srcBlas from "@/img/blastoise.png";
 import srcVena from "@/img/venasaur.png";
 import srcPika from "@/img/pikachu.png";
+import { Listener } from "@/js/keypress";
 
 let canvas, ctx;
 let imgObjM, imgObjB, imgObjP, imgObjV;
@@ -17,7 +18,7 @@ let sizeSection = 0;
 let sizeBG = 5, maxW_H_C;
 let maxEnemies = parseInt(sizeBG / 2) + 1;
 const waitingTimeShoot = 100;
-const keywordEvent = new window.keypress.Listener(this);
+const keywordEvent = new Listener(this);//new window.keypress.Listener(this);
 let keys;
 let isGameEnded = false, hasWon = false, hasStarted = false, firstCharge = false, hasWonAllGame=false;
 let nivelesSuperados = 0, nivelesSuperadosMsg = 0, actualVelocityIdx = 1;
