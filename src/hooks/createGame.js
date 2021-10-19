@@ -1,5 +1,5 @@
 import { ref } from "vue";
-import game from './game'
+import { getFlags } from './game'
 import srcChar from "@/img/charizard.png";
 import srcBlas from "@/img/blastoise.png";
 import srcVena from "@/img/venasaur.png";
@@ -1817,7 +1817,7 @@ function space() {
 function startGame() {
   if(!hasWonAllGame){
     hasStarted = true;
-    game.change(true)
+    getFlags().game.change(true)
   }
   if(hasWonAllGame && nivelesSuperados==nivelesMaximos){
     isGameEnded = true;
@@ -1834,7 +1834,7 @@ function resetGame() {
     isGameEnded = false;
     hasStarted = false;
     hasWon = false;
-    game.change(false)
+    getFlags().game.change(false)
 
     initiate();
   }
@@ -1902,7 +1902,7 @@ export function initiate() {
   objM = new mainObj();
   keys = {};
   hasStarted = false;
-  game.change(false);
+  getFlags().game.change(false);
   keywordEvent.simple_combo("enter", startGame);
   keywordEvent.simple_combo("space", space);
   /*Fin Instancia de Objetos*/

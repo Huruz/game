@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="mt-2">
+    <button @click="displayGame.change(true)" class="rounded-md bg-blue-500 hover:bg-blue-700 py-1 px-1.5 m-1 text-white">Jugar</button>
     <button @click="show = true" :class="claseBtn">Controles</button>
     <teleport to="body">
       <div id="keysInfo" 
@@ -23,6 +24,7 @@
 </template>
 <script>
 import { ref } from 'vue'
+import { getFlags } from '@/hooks/game'
 
 export default {
   setup() {
@@ -38,7 +40,7 @@ export default {
       { key: "Space (Barra espaciadora)", description: " hacer un disparo por el jugador" },
     ]);
 
-    return { claseSpanKey, claseBtn, controles, show }
+    return { claseSpanKey, claseBtn, controles, show, ...getFlags() }
   },
 }
 </script>

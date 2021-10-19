@@ -5,4 +5,11 @@ const game = reactive({
     change(value){ this.active = value },
 });
 
-export default game
+const displayGame = reactive({
+    active: true,
+    change(value){ this.active = value },
+});
+
+export function getFlags(){
+    return { game, displayGame }
+}

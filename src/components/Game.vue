@@ -10,12 +10,18 @@
         <div id="area" class="col-span-3 flex justify-center">
             <canvas id="canvas" :height="heightC">Canvas</canvas>
         </div>
+        <div class="mt-4 col-span-4 flex justify-center">
+            <button class="rounded-md bg-white hover:bg-blue-700 py-1 px-1 m-1 text-black hover:text-white"
+                @click="displayGame.change(false)">
+                Regresar</button>
+        </div>        
     </div>
 </template>
 
 <script>
 import { onBeforeUnmount, onMounted, ref } from 'vue';
 import { initiate, getData, stopGame } from '@/hooks/createGame';
+import { getFlags } from '@/hooks/game';
 
 export default {
     props:{
@@ -30,7 +36,7 @@ export default {
         //onUpdated(() => heightC.value = height)
         onBeforeUnmount(() => stopGame())
 
-        return { heightC, ...getData() }
+        return { heightC, ...getData(), ...getFlags() }
     }
 }
 </script>

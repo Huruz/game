@@ -1,8 +1,10 @@
 <template>
-  <div class="home mt-1">
+  <div class="home">
+    <div v-if="!displayGame.active">
     <HelloWorld/>
     <Instructions/>
-    <Game :height="heightScreen" />
+    </div>
+    <Game v-else :height="heightScreen" />
   </div>
 </template>
 
@@ -12,6 +14,7 @@ import { computed } from 'vue'
 import HelloWorld from '@/components/HelloWorld.vue'
 import Instructions from '@/components/Instructions.vue'
 import Game from '@/components/Game.vue'
+import { getFlags } from '@/hooks/game'
 
 export default {
   name: 'Home',
@@ -23,7 +26,7 @@ export default {
   setup(){
     const heightScreen = computed(() => screen.availHeight);
 
-    return { heightScreen }
+    return { heightScreen, ...getFlags() }
   }
 }
 </script>
