@@ -1,6 +1,6 @@
 <template>
   <div class="mt-2">
-    <button @click="displayGame.change(true)" class="rounded-md bg-blue-500 hover:bg-blue-700 py-1 px-1.5 m-1 text-white">Jugar</button>
+    <button @click="displayGame.change(true)" class="rounded-md bg-blue-600 hover:bg-blue-800 py-1 px-1.5 m-1 text-white">Jugar</button>
     <button @click="show = true" :class="claseBtn">Controles</button>
     <teleport to="body">
       <div id="keysInfo" 

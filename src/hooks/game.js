@@ -6,7 +6,7 @@ const game = reactive({
 });
 
 const displayGame = reactive({
-    active: true,
+    active: false,
     change(value){ this.active = value },
 });
 
