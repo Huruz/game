@@ -1,0 +1,31 @@
+.bg-darkP{
+    background-color: #1E1E1E;
+}
+.bg-darkS{
+    background-color: #141414;
+}
+.bg-blueP{
+    background-color: #1879DD;
+}
+.bg-blueS{
+    background-color: #033C77;
+}
+.bg-greenP{
+    background-color: #004D4D;
+}
+.color-purpleS{
+  color: #5B50E1;
+}
+.card{
+    box-shadow: 0 6px 0px 4px #bfdbfe31, 0 12px 0px 10px #bfdbfe31, 0 18px 0px 16px #bfdbfe31;
+}
+
+button:focus{
+    outline: none;
+}
+
+/*
+1E1E1E
+141414
+1879DD
+*/

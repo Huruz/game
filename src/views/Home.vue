@@ -1,10 +1,12 @@
 <template>
-  <div class="home">
-    <div v-if="!displayGame.active">
-    <HelloWorld/>
-    <Instructions/>
-    </div>
-    <Game v-else :height="heightScreen" />
+  <div class="home flex-auto">
+      <div v-if="displayGame.active" class="grid grid-cols-12 gap-2 h-full">
+        <div class="card bg-darkS col-start-3 col-end-11 my-auto p-3 rounded-md border-8 border-blue-400">
+          <HelloWorld/>
+          <Instructions/>
+        </div>
+      </div>
+      <Game v-else :height="heightScreen" />
   </div>
 </template>
 

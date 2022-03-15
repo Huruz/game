@@ -1727,8 +1727,8 @@ function drawTable() {
     for (let ix = 0; ix < sizeBG; ix++) {
       let value = tableG[iy][ix];
 
-      if (value != 0) ctx.fillStyle = "#062D80";
-      else ctx.fillStyle = "#5E5897";
+      if (value != 0) ctx.fillStyle = "#033C77";
+      else ctx.fillStyle = "#141414";
 
       ctx.fillRect(
         ix * sizeSection,
@@ -1881,10 +1881,10 @@ export function initiate() {
 
   if(!firstCharge){
     console.log("Width: "+document.getElementById("area").offsetWidth
-    +" Height: "+(canvas.height - document.getElementById("area").getBoundingClientRect().y - 50))
-    if(document.getElementById("area").offsetWidth <= (canvas.height - document.getElementById("area").getBoundingClientRect().y - 50))
+    +" Height: "+(canvas.height - document.getElementById("area").getBoundingClientRect().y - 120))
+    if(document.getElementById("area").offsetWidth <= (canvas.height - document.getElementById("area").getBoundingClientRect().y - 120))
       min = document.getElementById("area").offsetWidth
-    else min = canvas.height - document.getElementById("area").getBoundingClientRect().y -50
+    else min = canvas.height - document.getElementById("area").getBoundingClientRect().y -120
     
     min = parseInt((min*.95)/10)*10
 

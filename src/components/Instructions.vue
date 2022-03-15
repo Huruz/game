@@ -1,7 +1,7 @@
 <template>
-  <div class="mt-2">
-    <button @click="displayGame.change(true)" class="rounded-md bg-blue-600 hover:bg-blue-800 py-1 px-1.5 m-1 text-white">Jugar</button>
-    <button @click="show = true" :class="claseBtn">Controles</button>
+  <div class="mt-2 mb-3">
+    <button @click="displayGame.change(true)" class="rounded-md border-2 hover:border-transparent border-blue-600 hover:bg-blue-900 py-1 px-3 m-1 text-white font-semibold">Jugar</button>
+    <button @click="show = true" class="rounded-md bg-blue-600 hover:bg-blue-900 py-1 px-3 m-1 text-white font-semibold">Controles</button>
     <teleport to="body">
       <div id="keysInfo" 
         class="text-left modal absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50" 
@@ -30,7 +30,7 @@ export default {
   setup() {
     const show = ref(false);
     const claseSpanKey = ref("p-1 bg-white text-black border-black rounded-md border-2");
-    const claseBtn = ref("rounded-md bg-red-500 hover:bg-red-700 py-1 px-1.5 m-1 text-white");
+    const claseBtn = ref("rounded-md bg-red-600 hover:bg-red-800 py-1 px-3 m-1 text-white font-semibold");
     const controles = ref([
       { key: "W", description: " moverte hacia arriba" },
       { key: "S", description: " moverte hacia abajo" },

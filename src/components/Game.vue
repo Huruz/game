@@ -7,11 +7,11 @@
                 <h5 class="px-2 text-justify text-sm">{{msgNivel}}</h5>
             </div>
         </div>
-        <div id="area" class="col-span-3 flex justify-center">
+        <div id="area" class="col-span-3            flex justify-center">
             <canvas id="canvas" :height="heightC">Canvas</canvas>
         </div>
         <div class="mt-4 col-span-4 flex justify-center">
-            <button class="rounded-md bg-white hover:bg-blue-700 py-1 px-1 m-1 text-black hover:text-white"
+            <button class="rounded-md border-2 hover:border-transparent border-blue-600 hover:bg-blue-900 py-1 px-3 m-1 text-white font-semibold"
                 @click="displayGame.change(false)">
                 Regresar</button>
         </div>        

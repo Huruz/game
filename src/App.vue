@@ -1,5 +1,5 @@
 <template>
-  <div id="nav" class="container bg-gray-800 mx-auto h-screen my-auto">
+  <div id="nav" class="m-0 h-full flex flex-col">
     <div class="bg-black py-3">
       <router-link to="/">Home</router-link> |
       <router-link to="/about" v-show="!game.active">About</router-link>
@@ -24,10 +24,10 @@ export default {
 }
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #033C77;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #1879DD;
 }
 </style>
